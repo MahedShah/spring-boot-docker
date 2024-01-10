@@ -28,7 +28,15 @@ and then type the following commands in the Dockerfile
 
 FROM openjdk:17
 VOLUME /tmp
-ADD target/file.jar app.jar      #replace file.jar with your jar 
+ADD target/file.jar app.jar      #replace file.jar with your jar file name and app.jar with your application-name.jar 
 ENTRYPOINT ["java", "-jar", "/app.jar"]
+
+now building a docker image using command
+docker build -t your-app:latest .   #replace your-app  with application name
+now type 
+docker images        # to make sure that the is created
+
+
+to run docker image in a container type  docker run 8081:8080 your-app-name
 
 
